@@ -154,19 +154,19 @@ class _CoordinateConverter implements JsonConverter<PointCoordinates, List<doubl
   @override
   PointCoordinates fromJson(List<double> json) {
     if (json.isEmpty) {
-      throw Exception('Missing coordinates. Must be list of [lat, lng, alt?]');
+      throw Exception('Missing coordinates. Must be list of [lng, lat, alt?]');
     }
     if (json.length < 2 || json.length > 3) {
-      throw Exception('Wrong coordinates "$json". Must be list of [lat, lng, alt?]');
+      throw Exception('Wrong coordinates "$json". Must be list of [lng, lat, alt?]');
     }
-    return PointCoordinates(latitude: json[0], longitude: json[1], altitude: json.length == 2 ? null : json[2]);
+    return PointCoordinates(longitude: json[0], latitude: json[1], altitude: json.length == 2 ? null : json[2]);
   }
 
   @override
   List<double> toJson(PointCoordinates coordinate) {
     return [
-      coordinate.latitude,
       coordinate.longitude,
+      coordinate.latitude,
       if (coordinate.altitude != null) coordinate.altitude!,
     ];
   }
