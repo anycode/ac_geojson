@@ -9,7 +9,7 @@ void main() {
     });
 
     test('PointC', () {
-      final point = PointCoordinates(latitude: 10.1, longitude: 99.9);
+      final point = PointCoordinates(latitude: 99.9, longitude: 10.1);
       final json = <double>[10.1, 99.9];
       expect(point.toJson(), json);
       expect(point, PointCoordinates.fromJson(json));
@@ -17,8 +17,8 @@ void main() {
 
     test('MultiPointC', () {
       final multiPoint = MultiPointCoordinates([
-        PointCoordinates(latitude: 10.1, longitude: 99.9),
-        PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+        PointCoordinates(latitude: 99.9, longitude: 10.1),
+        PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
       ]);
       final json = [
         <double>[10.1, 99.9],
@@ -30,8 +30,8 @@ void main() {
 
     test('LineC', () {
       final line = LineCoordinates([
-        PointCoordinates(latitude: 10.1, longitude: 99.9),
-        PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+        PointCoordinates(latitude: 99.9, longitude: 10.1),
+        PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
       ]);
       final json = [
         <double>[10.1, 99.9],
@@ -44,12 +44,12 @@ void main() {
     test('MultiLineC', () {
       final multiLine = MultiLineCoordinates([
         LineCoordinates([
-          PointCoordinates(latitude: 10.1, longitude: 99.9),
-          PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+          PointCoordinates(latitude: 99.9, longitude: 10.1),
+          PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
         ]),
         LineCoordinates([
-          PointCoordinates(latitude: 67.4, longitude: 16.8),
-          PointCoordinates(latitude: 0.46, longitude: 91.6),
+          PointCoordinates(latitude: 16.8, longitude: 67.4),
+          PointCoordinates(latitude: 91.6, longitude: 0.46),
         ]),
       ]);
       final json = [
@@ -69,16 +69,16 @@ void main() {
     test('PolygonC', () {
       final polygon = PolygonCoordinates([
         LineCoordinates([
-          PointCoordinates(latitude: 10.1, longitude: 99.9),
-          PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-          PointCoordinates(latitude: 10.1, longitude: 99.9),
+          PointCoordinates(latitude: 99.9, longitude: 10.1),
+          PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+          PointCoordinates(latitude: 99.9, longitude: 10.1),
         ]),
         LineCoordinates([
-          PointCoordinates(latitude: 67.4, longitude: 16.8),
-          PointCoordinates(latitude: 7.6, longitude: 2.45),
-          PointCoordinates(latitude: 9.4, longitude: 93.3),
-          PointCoordinates(latitude: 57.1, longitude: 14.6),
-          PointCoordinates(latitude: 67.4, longitude: 16.8),
+          PointCoordinates(latitude: 16.8, longitude: 67.4),
+          PointCoordinates(latitude: 2.45, longitude: 7.6),
+          PointCoordinates(latitude: 93.3, longitude: 9.4),
+          PointCoordinates(latitude: 14.6, longitude: 57.1),
+          PointCoordinates(latitude: 16.8, longitude: 67.4),
         ]),
       ]);
       final json = [
@@ -103,30 +103,30 @@ void main() {
       final multiPolygon = MultiPolygonCoordinates([
         PolygonCoordinates([
           LineCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
           ]),
           LineCoordinates([
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
-            PointCoordinates(latitude: 7.6, longitude: 2.45),
-            PointCoordinates(latitude: 9.4, longitude: 93.3),
-            PointCoordinates(latitude: 57.1, longitude: 14.6),
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
+            PointCoordinates(latitude: 2.45, longitude: 7.6),
+            PointCoordinates(latitude: 93.3, longitude: 9.4),
+            PointCoordinates(latitude: 14.6, longitude: 57.1),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
           ]),
         ]),
         PolygonCoordinates([
           LineCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
           ]),
           LineCoordinates([
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
-            PointCoordinates(latitude: 7.6, longitude: 2.45),
-            PointCoordinates(latitude: 9.4, longitude: 93.3),
-            PointCoordinates(latitude: 57.1, longitude: 14.6),
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
+            PointCoordinates(latitude: 2.45, longitude: 7.6),
+            PointCoordinates(latitude: 93.3, longitude: 9.4),
+            PointCoordinates(latitude: 14.6, longitude: 57.1),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
           ]),
         ]),
       ]);
@@ -173,7 +173,7 @@ void main() {
     test('PointG', () {
       final name = 'point geometry';
       final point = GeoJsonPoint(
-        coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+        coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
         name: name,
       );
       final json = <String, dynamic>{
@@ -188,8 +188,8 @@ void main() {
       final name = 'multi point geometry';
       final multiPoint = GeoJsonMultiPoint(
         coordinates: MultiPointCoordinates([
-          PointCoordinates(latitude: 10.1, longitude: 99.9),
-          PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+          PointCoordinates(latitude: 99.9, longitude: 10.1),
+          PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
         ]),
         name: name,
       );
@@ -208,8 +208,8 @@ void main() {
       final name = 'line geometry';
       final line = GeoJsonLine(
         coordinates: LineCoordinates([
-          PointCoordinates(latitude: 10.1, longitude: 99.9),
-          PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+          PointCoordinates(latitude: 99.9, longitude: 10.1),
+          PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
         ]),
         name: name,
       );
@@ -229,12 +229,12 @@ void main() {
       final multiLine = GeoJsonMultiLine(
         coordinates: MultiLineCoordinates([
           LineCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
           ]),
           LineCoordinates([
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
-            PointCoordinates(latitude: 0.46, longitude: 91.6),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
+            PointCoordinates(latitude: 91.6, longitude: 0.46),
           ]),
         ]),
         name: name,
@@ -261,16 +261,16 @@ void main() {
       final polygon = GeoJsonPolygon(
         coordinates: PolygonCoordinates([
           LineCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
           ]),
           LineCoordinates([
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
-            PointCoordinates(latitude: 7.6, longitude: 2.45),
-            PointCoordinates(latitude: 9.4, longitude: 93.3),
-            PointCoordinates(latitude: 57.1, longitude: 14.6),
-            PointCoordinates(latitude: 67.4, longitude: 16.8),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
+            PointCoordinates(latitude: 2.45, longitude: 7.6),
+            PointCoordinates(latitude: 93.3, longitude: 9.4),
+            PointCoordinates(latitude: 14.6, longitude: 57.1),
+            PointCoordinates(latitude: 16.8, longitude: 67.4),
           ]),
         ]),
         name: name,
@@ -302,30 +302,30 @@ void main() {
         coordinates: MultiPolygonCoordinates([
           PolygonCoordinates([
             LineCoordinates([
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
-              PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
+              PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
             ]),
             LineCoordinates([
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
-              PointCoordinates(latitude: 7.6, longitude: 2.45),
-              PointCoordinates(latitude: 9.4, longitude: 93.3),
-              PointCoordinates(latitude: 57.1, longitude: 14.6),
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
+              PointCoordinates(latitude: 2.45, longitude: 7.6),
+              PointCoordinates(latitude: 93.3, longitude: 9.4),
+              PointCoordinates(latitude: 14.6, longitude: 57.1),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
             ]),
           ]),
           PolygonCoordinates([
             LineCoordinates([
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
-              PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
+              PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
             ]),
             LineCoordinates([
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
-              PointCoordinates(latitude: 7.6, longitude: 2.45),
-              PointCoordinates(latitude: 9.4, longitude: 93.3),
-              PointCoordinates(latitude: 57.1, longitude: 14.6),
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
+              PointCoordinates(latitude: 2.45, longitude: 7.6),
+              PointCoordinates(latitude: 93.3, longitude: 9.4),
+              PointCoordinates(latitude: 14.6, longitude: 57.1),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
             ]),
           ]),
         ]),
@@ -373,13 +373,13 @@ void main() {
       final collection = GeoJsonGeometryCollection(
         geometries: [
           GeoJsonPoint(
-            coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+            coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
             name: name,
           ),
           GeoJsonMultiPoint(
             coordinates: MultiPointCoordinates([
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
-              PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
+              PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
             ]),
             name: name,
           ),
@@ -415,7 +415,7 @@ void main() {
       final name = 'point';
       final point = GeoJsonFeature<GeoJsonPoint>(
         geometry: GeoJsonPoint(
-          coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+          coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
           name: name,
         ),
       );
@@ -436,8 +436,8 @@ void main() {
       final multiPoint = GeoJsonFeature<GeoJsonMultiPoint>(
         geometry: GeoJsonMultiPoint(
           coordinates: MultiPointCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
           ]),
           name: name,
         ),
@@ -462,8 +462,8 @@ void main() {
       final line = GeoJsonFeature<GeoJsonLine>(
         geometry: GeoJsonLine(
           coordinates: LineCoordinates([
-            PointCoordinates(latitude: 10.1, longitude: 99.9),
-            PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+            PointCoordinates(latitude: 99.9, longitude: 10.1),
+            PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
           ]),
           name: name,
         ),
@@ -489,12 +489,12 @@ void main() {
         geometry: GeoJsonMultiLine(
           coordinates: MultiLineCoordinates([
             LineCoordinates([
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
-              PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
+              PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
             ]),
             LineCoordinates([
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
-              PointCoordinates(latitude: 0.46, longitude: 91.6),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
+              PointCoordinates(latitude: 91.6, longitude: 0.46),
             ]),
           ]),
           name: name,
@@ -527,16 +527,16 @@ void main() {
         geometry: GeoJsonPolygon(
           coordinates: PolygonCoordinates([
             LineCoordinates([
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
-              PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-              PointCoordinates(latitude: 10.1, longitude: 99.9),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
+              PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+              PointCoordinates(latitude: 99.9, longitude: 10.1),
             ]),
             LineCoordinates([
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
-              PointCoordinates(latitude: 7.6, longitude: 2.45),
-              PointCoordinates(latitude: 9.4, longitude: 93.3),
-              PointCoordinates(latitude: 57.1, longitude: 14.6),
-              PointCoordinates(latitude: 67.4, longitude: 16.8),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
+              PointCoordinates(latitude: 2.45, longitude: 7.6),
+              PointCoordinates(latitude: 93.3, longitude: 9.4),
+              PointCoordinates(latitude: 14.6, longitude: 57.1),
+              PointCoordinates(latitude: 16.8, longitude: 67.4),
             ]),
           ]),
           name: name,
@@ -574,30 +574,30 @@ void main() {
           coordinates: MultiPolygonCoordinates([
             PolygonCoordinates([
               LineCoordinates([
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
-                PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
+                PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
               ]),
               LineCoordinates([
-                PointCoordinates(latitude: 67.4, longitude: 16.8),
-                PointCoordinates(latitude: 7.6, longitude: 2.45),
-                PointCoordinates(latitude: 9.4, longitude: 93.3),
-                PointCoordinates(latitude: 57.1, longitude: 14.6),
-                PointCoordinates(latitude: 67.4, longitude: 16.8),
+                PointCoordinates(latitude: 16.8, longitude: 67.4),
+                PointCoordinates(latitude: 2.45, longitude: 7.6),
+                PointCoordinates(latitude: 93.3, longitude: 9.4),
+                PointCoordinates(latitude: 14.6, longitude: 57.1),
+                PointCoordinates(latitude: 16.8, longitude: 67.4),
               ]),
             ]),
             PolygonCoordinates([
               LineCoordinates([
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
-                PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
+                PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
               ]),
               LineCoordinates([
-                PointCoordinates(latitude: 67.4, longitude: 16.8),
-                PointCoordinates(latitude: 7.6, longitude: 2.45),
-                PointCoordinates(latitude: 9.4, longitude: 93.3),
-                PointCoordinates(latitude: 57.1, longitude: 14.6),
-                PointCoordinates(latitude: 67.4, longitude: 16.8),
+                PointCoordinates(latitude: 16.8, longitude: 67.4),
+                PointCoordinates(latitude: 2.45, longitude: 7.6),
+                PointCoordinates(latitude: 93.3, longitude: 9.4),
+                PointCoordinates(latitude: 14.6, longitude: 57.1),
+                PointCoordinates(latitude: 16.8, longitude: 67.4),
               ]),
             ]),
           ]),
@@ -654,13 +654,13 @@ void main() {
           name: name,
           geometries: [
             GeoJsonPoint(
-              coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+              coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
               name: name1,
             ),
             GeoJsonMultiPoint(
               coordinates: MultiPointCoordinates([
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
-                PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
+                PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
               ]),
               name: name2,
             ),
@@ -704,15 +704,15 @@ void main() {
         features: [
           GeoJsonFeature<GeoJsonPoint>(
             geometry: GeoJsonPoint(
-              coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+              coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
               name: f1name,
             ),
           ),
           GeoJsonFeature<GeoJsonLine>(
             geometry: GeoJsonLine(
               coordinates: LineCoordinates([
-                PointCoordinates(latitude: 10.1, longitude: 99.9),
-                PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+                PointCoordinates(latitude: 99.9, longitude: 10.1),
+                PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
               ]),
               name: f2name,
             ),
@@ -758,7 +758,7 @@ void main() {
       final geoJson = GeoJson(
         feature: GeoJsonFeature<GeoJsonPoint>(
           geometry: GeoJsonPoint(
-            coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+            coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
             name: name,
           ),
         ),
@@ -783,15 +783,15 @@ void main() {
           features: [
             GeoJsonFeature<GeoJsonPoint>(
               geometry: GeoJsonPoint(
-                coordinates: PointCoordinates(latitude: 10.1, longitude: 99.9),
+                coordinates: PointCoordinates(latitude: 99.9, longitude: 10.1),
                 name: f1name,
               ),
             ),
             GeoJsonFeature<GeoJsonLine>(
               geometry: GeoJsonLine(
                 coordinates: LineCoordinates([
-                  PointCoordinates(latitude: 10.1, longitude: 99.9),
-                  PointCoordinates(latitude: 23.4, longitude: 87.6, altitude: 0.05),
+                  PointCoordinates(latitude: 99.9, longitude: 10.1),
+                  PointCoordinates(latitude: 87.6, longitude: 23.4, altitude: 0.05),
                 ]),
                 name: f2name,
               ),
