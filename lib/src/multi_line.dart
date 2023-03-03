@@ -20,7 +20,7 @@ class GeoJsonMultiLine extends GeoJsonGeometry {
 
   /// The name of the line
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final String? name;
 
   // equality only on coordinates

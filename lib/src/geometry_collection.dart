@@ -26,7 +26,7 @@ class GeoJsonGeometryCollection extends GeoJsonGeometry {
 
   /// The name of the collection
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final String? name;
 
   /// Add a geometry to the collection

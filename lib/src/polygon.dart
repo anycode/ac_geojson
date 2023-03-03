@@ -20,7 +20,7 @@ class GeoJsonPolygon extends GeoJsonGeometry {
 
   /// The name of the polygon
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final String? name;
 
   @override

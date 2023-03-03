@@ -20,7 +20,7 @@ class GeoJsonPoint extends GeoJsonGeometry {
 
   /// The name of the point
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final String? name;
 
   // equality only on coordinates

@@ -20,7 +20,7 @@ class GeoJsonMultiPoint extends GeoJsonGeometry {
 
   /// The name of the multi point
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   final String? name;
 
   // equality only on coordinates
