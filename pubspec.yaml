@@ -1,7 +1,8 @@
-name: geojson
+name: ac_geojson
 description: GeoJson classes using JsonSerializable
 version: 1.0.2
-# homepage: https://www.example.com
+homepage: https://github.com/anycode/ac_geojson.dart
+repository: https://github.com/anycode/ac_geojson.dart
 publish_to: 'none'
 
 environment:
