@@ -1,4 +1,4 @@
-library geojson;
+library dev.anycode.dart.geojson;
 
 export 'src/coordinate.dart';
 export 'src/feature.dart';
