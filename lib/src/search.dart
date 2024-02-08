@@ -1,4 +1,4 @@
-import 'package:geojson/src/geometry.dart';
+import 'package:ac_geojson/src/geometry.dart';
 
 /// The type of search to process
 enum GeoSearchType {

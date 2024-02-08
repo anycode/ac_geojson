@@ -1,4 +1,4 @@
-import 'package:geojson/geojson.dart';
+import 'package:ac_geojson/ac_geojson.dart';
 import 'package:recase/recase.dart';
 import 'package:test/test.dart';
 

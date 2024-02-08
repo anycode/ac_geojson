@@ -1,4 +1,4 @@
-import 'package:geojson/src/coordinate.dart';
+import 'package:ac_geojson/src/coordinate.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'geometry.dart';
