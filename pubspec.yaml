@@ -3,10 +3,10 @@ description: GeoJson classes using JsonSerializable
 version: 1.0.3
 homepage: https://github.com/anycode/ac_geojson.dart
 repository: https://github.com/anycode/ac_geojson.dart
-publish_to: 'none'
+publish_to: https://pub.anycode.dev
 
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=2.15.0 <4.0.0'
 
 dependencies:
   collection: ^1.18.0
@@ -14,7 +14,7 @@ dependencies:
 
 dev_dependencies:
   analyzer: ^6.4.1
-  build_runner: ^2.4.8
+  build_runner: ^2.4.9
   json_serializable: ^6.7.1
   lints: ^3.0.0
   recase: ^4.1.0
